@@ -10,4 +10,4 @@ jobs:
       with:
         type: 'zip'
         filename: 'trustCertA14.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig'
+        exclusions: '*.git* /*node_modules/* .editorconfig .vscode'
