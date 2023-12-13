@@ -14,7 +14,7 @@
 
 
 ### Install this module
-1. Download this module from the release page
+1. Download this module from the [release](https://github.com/jadkorr/trustCertA14/releases) page
 2. Install this module into magisk modules
 3. Reboot
 
