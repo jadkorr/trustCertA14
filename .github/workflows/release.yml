@@ -13,10 +13,10 @@ jobs:
     - name: Zip Folder
       run: zip -r trustCertA14.zip .
     - name: Release to Github
-    - uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: trustCertA14.zip
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
     
