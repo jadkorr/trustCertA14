@@ -1,5 +1,5 @@
 # trustCertA14
- This module will trust user certs on Android 14 for traffic analysis
+ This module will trust user certs on Android 14 for traffic analysis.
 
  This module is based on the research from [Tim Perry](https://httptoolkit.com/blog/android-14-install-system-ca-certificate/)
 
