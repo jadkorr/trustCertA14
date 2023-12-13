@@ -36,7 +36,13 @@ ZYGOTE64_PID=$(pidof zygote64 || true)
 
 # Apps inherit the Zygote's mounts at startup, so we inject here to ensure
 # all newly started apps will see these certs straight away:
-for Z_PID in "$ZYGOTE_PID" "$ZYGOTE64_PID"; do
+for Z_PID in $ZYGOTE_PID; do
+	if [ -n "$Z_PID" ]; then
+		/system/bin/nsenter --mount=/proc/$Z_PID/ns/mnt -- /bin/mount --bind /system/etc/security/cacerts /apex/com.android.conscrypt/cacerts
+	fi
+done
+
+for Z_PID in $ZYGOTE64_PID; do
 	if [ -n "$Z_PID" ]; then
 		/system/bin/nsenter --mount=/proc/$Z_PID/ns/mnt -- /bin/mount --bind /system/etc/security/cacerts /apex/com.android.conscrypt/cacerts
 	fi
@@ -56,8 +62,3 @@ for PID in $APP_PIDS; do
 	/system/bin/nsenter --mount=/proc/$PID/ns/mnt -- /bin/mount --bind /system/etc/security/cacerts /apex/com.android.conscrypt/cacerts &
 done
 wait # Launched in parallel - wait for completion here
-
-# cleanup
-rm -rf /data/local/tmp/tmp-ca-copy
-
-
