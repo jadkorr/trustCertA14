@@ -1,0 +1,7 @@
+id=Trust-Certificates-Android14
+name=Trust User Certificates on Android 14
+version=v1
+versionCode=1
+author=Jadkorr (https://twitter.com/jadkorr)
+description=This module adds all the certificates into a memory location bypassing the Android 14 certificate restrictions
+minMagisk=26400
