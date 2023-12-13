@@ -5,6 +5,7 @@
  This module is based on the research from [Tim Perry](https://httptoolkit.com/blog/android-14-install-system-ca-certificate/)
 
 ### Requirements
+
 1. Rooted Phone with Magisk v26.4
 2. Download this release
 
@@ -23,9 +24,11 @@
 
 
 ### Device Tested
+
 This script was tested on a Google Pixel 6 running Android 14 with the latest Security Update (Nov. 2023) using Magisk 26.4
 
 ### Changelog
 
 #### v1.0
+
 * First release
